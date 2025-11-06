@@ -3,7 +3,7 @@ version: 0.2
 env:
     variables:
         AWS_REGION_NAME: ap-northeast-1
-        ECR_REPOSITORY_NAME: sbcntr-backend
+        ECR_REPOSITORY_NAME: oshima-handson-backend
         DOCKER_BUILDKIT: "1"
     
 phases:
