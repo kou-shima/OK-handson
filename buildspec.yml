@@ -31,8 +31,6 @@ phases:
     post_build:
         commands:
             # trivyによるイメージスキャン(結果格納用)
-            - docker images
-            - echo "Scanning image: ${REPOSITORY_URI}:${IMAGE_TAG}"
             - trivy --no-progress -f json -o trivy_results.json --exit-code 0 ${REPOSITORY_URI}:${IMAGE_TAG}
             # trivyによるイメージスキャン(CRITICALレベルの脆弱性ある場合はBuild強制終了)
             - trivy --no-progress --exit-code 1 --severity CRITICAL ${REPOSITORY_URI}:${IMAGE_TAG}
