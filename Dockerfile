@@ -1,7 +1,7 @@
 # Multi stage building strategy for reducing image size.
 # 変更点: 公式のGoイメージ（amd64互換）を直接使用
-FROM golang:1.16.8-alpine3.13 AS build-env 
-# FROM 233928981508.dkr.ecr.ap-northeast-1.amazonaws.com/oshima-handson-base:golang1.16.8-alpine3.13 AS build-env
+# FROM golang:1.16.8-alpine3.13 AS build-env 
+FROM 233928981508.dkr.ecr.ap-northeast-1.amazonaws.com/oshima-handson-base:golang1.16.8-alpine3.13 AS build-env
 
 ENV GO111MODULE=on
 RUN mkdir /app
